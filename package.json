@@ -1,0 +1,31 @@
+{
+  "name": "nativescript-hockey-sdk",
+  "version": "0.0.1",
+  "description": "Use the HockeyApp SDK in NativeScript projects",
+  "nativescript": {
+    "platforms": {
+      "ios": "2.1.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toddanglin/nativescript-hockey-sdk"
+  },
+  "keywords": [
+    "NativeScript",
+    "iOS",
+    "HockeyApp",
+    "HockeySDK",
+    "Microsoft"
+  ],
+  "author": {
+    "name": "Todd Anglin",
+    "email": "toddanglin@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/toddanglin/nativescript-hockey-sdk/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/toddanglin/nativescript-hockey-sdk",
+  "readmeFilename": "README.md"
+}
