@@ -1,4 +1,4 @@
-HockeyApp SDK for NativeScript
+HockeyApp SDK for NativeScript (beta)
 =======================================
 A NativeScript plugin for the [HockeyApp SDK](https://www.hockeyapp.net))(iOS Only)
 
@@ -37,6 +37,10 @@ The iOS version of this plugin uses the HockeyApp SDK CocoaPod. See the [HockeyA
 
 ### Android
 While the HockeyApp SDK supports Android, support in this plugin for Android is not yet available. Pull requests welcome. :thumbsup:
+
+## Beta ToDos
+- Add support for Android
+- Add TypeScript definitions for CocoaPod types
 
 ## License
 MIT
