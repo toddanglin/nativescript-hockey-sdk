@@ -3,6 +3,7 @@ lib/
 .DS_Store
 *.js.map
 *.js
+!*install.js
 *.log
 hooks/
 node_modules
