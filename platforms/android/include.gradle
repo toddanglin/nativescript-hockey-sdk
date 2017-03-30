@@ -1,0 +1,17 @@
+android {
+    productFlavors {
+        "nativescript-hockey-sdk" {
+            dimension "nativescript-hockey-sdk"
+        }
+    }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile('net.hockeyapp.android:HockeySDK:4.1.3') {
+    transitive = true;
+  }
+}
