@@ -3,7 +3,7 @@ HockeyApp SDK for NativeScript (beta)
 A NativeScript plugin for the [HockeyApp SDK](https://www.hockeyapp.net))(iOS Only)
 
 ----------
-This plugin installs the [HockeyApp SDK](https://www.hockeyapp.net/releases/) in [NativeScript](https://www.nativescript.org/) projects. 
+This plugin installs the [HockeyApp SDK](https://www.hockeyapp.net/releases/) in [NativeScript](https://www.nativescript.org/) projects.
 
 
 # How to use
@@ -36,11 +36,25 @@ app.on(app.launchEvent, function(context) {
 The iOS version of this plugin uses the HockeyApp SDK CocoaPod. See the [HockeyApp SDK CocoaPod docs](https://cocoapods.org/pods/HockeySDK-Source) for additional configuration options.
 
 ### Android
-While the HockeyApp SDK supports Android, support in this plugin for Android is not yet available. Pull requests welcome. :thumbsup:
+The SDK wrapper and init mechanism is shamelessly copied from [the Fabric plugin](https://github.com/hypery2k/nativescript-fabric).
+
+Add the HockeyApp application ID:
+```
+<meta-data android:name="net.hockeyapp.android.appIdentifier" android:value="${HOCKEYAPP_APP_ID}" />
+```
+to the manifest file: `/app/App_Resources/Android/AndroidManifest.xml`.
+
+Import the plugin and run init() in your app.ts / main.ts (I use the Angular AppModule constructor):
+```
+import { HockeyApp } from 'nativescript-hockey-sdk';
+...
+HockeyApp.init();
+```
 
 ## Beta ToDos
-- Add support for Android
+- Same Init API for iOS as for Android
 - Add TypeScript definitions for CocoaPod types
+- Wrapper around MetricsManager event tracking methods
 
 ## License
 MIT

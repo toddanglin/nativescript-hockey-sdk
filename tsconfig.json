@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "lib": [
+            "es2016"
+        ]
+    },
+    "compileOnSave": false,
+    "exclude": [
+        "node_modules",
+        "platforms"
+    ]
+}

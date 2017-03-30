@@ -1,4 +1,8 @@
 *.log
 lib/
-node_modules/
 .DS_Store
+*.js.map
+*.js
+*.log
+hooks/
+node_modules
