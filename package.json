@@ -1,6 +1,6 @@
 {
   "name": "nativescript-hockey-sdk",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Use the HockeyApp SDK in NativeScript projects",
   "main": "hockeyapp",
   "typings": "index.d.ts",

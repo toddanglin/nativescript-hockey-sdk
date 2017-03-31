@@ -12,6 +12,7 @@ const APP_ID_KEY = "HockeyAppId";
 class HockeyAppIOSPlugin implements IOS {
 
     private initDone = false;
+    private metricsManager : any = null;
 
     constructor() { }
 
@@ -39,10 +40,22 @@ class HockeyAppIOSPlugin implements IOS {
             BITHockeyManager.sharedHockeyManager().startManager();
             BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation();
 
+            this.metricsManager = BITHockeyManager.sharedHockeyManager().metricsManager;
             this.initDone = true;
         } catch (e) {
             console.error('Error during init of HockeyApp', e);
         }
+    }
+
+    trackEvent(eventName: string): void {
+        if (!this.metricsManager) {
+            console.warn("Metrics manager is not initialized, event won't be tracked");
+            return;
+        }
+        if (!eventName || !/^[a-zA-Z0-9_. -]+$/.test(eventName)) {
+            console.warn("Invalid event name, it may not appear in HockeyApp");
+        }
+        this.metricsManager.trackEventWithName(eventName)
     }
 
 }

@@ -34,6 +34,17 @@ class HockeyAppAndroidPlugin implements Android {
         }
     }
 
+    trackEvent(eventName: string): void {
+        if (!net.hockeyapp.android.metrics.MetricsManager.getInstance()) {
+            console.warn("Metrics manager is not initialized, event won't be tracked");
+            return;
+        }
+        if (!eventName || !/^[a-zA-Z0-9_. -]+$/.test(eventName)) {
+            console.warn("Invalid event name, it may not appear in HockeyApp");
+        }
+        net.hockeyapp.android.metrics.MetricsManager.trackEvent(eventName);
+    }
+
 }
 
 /**
