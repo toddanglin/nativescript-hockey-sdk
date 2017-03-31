@@ -1,6 +1,6 @@
 HockeyApp SDK for NativeScript (beta)
 =======================================
-A NativeScript plugin for the [HockeyApp SDK](https://www.hockeyapp.net))(iOS and Android)
+A NativeScript plugin for the [HockeyApp SDK](https://www.hockeyapp.net)(iOS and Android)
 
 ----------
 This plugin installs the [HockeyApp SDK](https://www.hockeyapp.net/releases/) in [NativeScript](https://www.nativescript.org/) projects.
