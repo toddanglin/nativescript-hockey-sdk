@@ -1,9 +1,9 @@
 HockeyApp SDK for NativeScript (beta)
 =======================================
-A NativeScript plugin for the [HockeyApp SDK](https://www.hockeyapp.net))(iOS Only)
+A NativeScript plugin for the [HockeyApp SDK](https://www.hockeyapp.net)(iOS and Android)
 
 ----------
-This plugin installs the [HockeyApp SDK](https://www.hockeyapp.net/releases/) in [NativeScript](https://www.nativescript.org/) projects. 
+This plugin installs the [HockeyApp SDK](https://www.hockeyapp.net/releases/) in [NativeScript](https://www.nativescript.org/) projects.
 
 
 # How to use
@@ -13,33 +13,58 @@ Run the following command in the root of your project:
 $ tns plugin add nativescript-hockey-sdk
 ```
 
+The SDK wrapper and init mechanism is shamelessly copied from [the Fabric plugin](https://github.com/hypery2k/nativescript-fabric).
+
 ## Usage
-To use the HockeyApp SDK, you will need an "APP_API_KEY" from the HockeyApp service. Visit the [HockeyApp website](https://www.hockeyapp.net/features) to obtain a key for your app.
+To use the HockeyApp SDK, you will need an "APP_ID" from the HockeyApp service. Visit the [HockeyApp website](https://www.hockeyapp.net/features) to obtain a key for your app. Enter that value in the AndroidManifest.xml or Info.plist, then import the plugin and call its init() method.
 
-### iOS
-For basic usage of the HockeyApp SDK, add the following to your `app.ts` or `app.js` file in the `launchEvent` handler:
 ```
-BITHockeyManager.sharedHockeyManager().configureWithIdentifier("APP_API_KEY");
-BITHockeyManager.sharedHockeyManager().startManager();
-BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation();
+import { HockeyApp } from 'nativescript-hockey-sdk';
+...
+HockeyApp.init();
+HockeyApp.trackEvent("LOG_IN");
 ```
-Where "APP_API_KEY" is the key for your app from HockeyApp.
 
-Example:
+You could for instance add the following to your `app.ts` or `app.js` file in the `launchEvent` handler:
+
 ```
 app.on(app.launchEvent, function(context) {
-    BITHockeyManager.sharedHockeyManager().configureWithIdentifier("APP_API_KEY");
-    BITHockeyManager.sharedHockeyManager().startManager();
-    BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation();
+    HockeyApp.init();
 });
 ```
+
+or the Angular AppModule constructor (launch/activity created events were not reliably fired in my case):
+
+```
+export class AppModule {
+  constructor() {
+    HockeyApp.init();
+    HockeyApp.trackEvent("LAUNCH");
+  }
+}
+```
+
+### iOS
+
+Add the HockeyApp application ID to the `/app/App_Resources/iOS/Info.plist` file:
+```
+<key>HockeyAppId</key>
+<string>${APP_ID}</string>
+```
+
+
 The iOS version of this plugin uses the HockeyApp SDK CocoaPod. See the [HockeyApp SDK CocoaPod docs](https://cocoapods.org/pods/HockeySDK-Source) for additional configuration options.
 
 ### Android
-While the HockeyApp SDK supports Android, support in this plugin for Android is not yet available. Pull requests welcome. :thumbsup:
+
+Add the HockeyApp application ID to the `/app/App_Resources/Android/AndroidManifest.xml` file:
+```
+<meta-data android:name="net.hockeyapp.android.appIdentifier" android:value="${APP_ID}" />
+```
+
+then import and init as shown in the usage section.
 
 ## Beta ToDos
-- Add support for Android
 - Add TypeScript definitions for CocoaPod types
 
 ## License

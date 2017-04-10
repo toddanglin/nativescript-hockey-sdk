@@ -1,10 +1,20 @@
 {
   "name": "nativescript-hockey-sdk",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "description": "Use the HockeyApp SDK in NativeScript projects",
+  "main": "hockeyapp",
+  "typings": "index.d.ts",
+  "scripts": {
+    "clean": "npm i rimraf && rimraf node_modules && npm install",
+    "build": "tsc",
+    "test": "npm run build",
+    "postinstall": "node postinstall.js",
+    "preuninstall": "node preuninstall.js"
+  },
   "nativescript": {
     "platforms": {
-      "ios": "2.1.0"
+      "ios": "2.1.0",
+      "android": "2.5.0"
     }
   },
   "repository": {
@@ -14,6 +24,7 @@
   "keywords": [
     "NativeScript",
     "iOS",
+    "Android",
     "HockeyApp",
     "HockeySDK",
     "Microsoft"
@@ -25,7 +36,20 @@
   "bugs": {
     "url": "https://github.com/toddanglin/nativescript-hockey-sdk/issues"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "homepage": "https://github.com/toddanglin/nativescript-hockey-sdk",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "nativescript-hook": "^0.2.1"
+  },
+  "peerDependencies": {
+    "tns-core-modules": "^2.5.1"
+  },
+  "devDependencies": {
+    "nativescript-dev-typescript": "0.3.7",
+    "tns-core-modules": "^2.5.1",
+    "tns-platform-declarations": "^2.5.1",
+    "typescript": "2.2.1",
+    "rimraf": "2.6.1"
+  }
 }
