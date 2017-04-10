@@ -1,6 +1,6 @@
 {
   "name": "nativescript-hockey-sdk",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Use the HockeyApp SDK in NativeScript projects",
   "main": "hockeyapp",
   "typings": "index.d.ts",
@@ -9,11 +9,19 @@
     "build": "tsc",
     "test": "npm run build",
     "postinstall": "node postinstall.js",
-    "preuninstall": "node preuninstall.js"
+    "preuninstall": "node preuninstall.js",
+    "demo.ios": "npm run preparedemo && cd demo && tns run ios --emulator",
+    "demo.ios.device": "npm run preparedemo && cd demo && tns run ios",
+    "demo.android": "npm run preparedemo && cd demo && tns run android --emulator",
+    "test.ios": "cd demo && tns test ios --emulator",
+    "test.ios.device": "cd demo && tns test ios",
+    "test.android": "cd demo && tns test android",
+    "preparedemo": "npm run build && cd demo && tns plugin remove nativescript-hockey-sdk && tns plugin add .. && tns install",
+    "setup": "npm i && cd demo && npm i && cd .. && cd demo && tns plugin add .. && cd .."
   },
   "nativescript": {
     "platforms": {
-      "ios": "2.1.0",
+      "ios": "2.5.0",
       "android": "2.5.0"
     }
   },
@@ -33,19 +41,22 @@
     "name": "Todd Anglin",
     "email": "toddanglin@gmail.com"
   },
+  "contributors": [{
+		"name": "Arnau VP",
+		"email": "arnau@softwaremeetsdesign.com",
+		"url": "https://github.com/arnauvp"
+	}],
   "bugs": {
     "url": "https://github.com/toddanglin/nativescript-hockey-sdk/issues"
   },
   "license": "MIT",
   "homepage": "https://github.com/toddanglin/nativescript-hockey-sdk",
   "readmeFilename": "README.md",
-  "dependencies": {
-    "nativescript-hook": "^0.2.1"
-  },
   "peerDependencies": {
     "tns-core-modules": "^2.5.1"
   },
   "devDependencies": {
+    "nativescript-hook": "^0.2.1",
     "nativescript-dev-typescript": "0.3.7",
     "tns-core-modules": "^2.5.1",
     "tns-platform-declarations": "^2.5.1",
