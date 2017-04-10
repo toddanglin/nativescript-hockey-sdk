@@ -1,3 +1,14 @@
 *.log
 *.ts
 !*.d.ts
+
+.DS_Store
+logs
+results
+.idea/
+.settings/
+.vscode/
+
+demo/
+node_modules
+hooks/

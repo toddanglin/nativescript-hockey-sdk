@@ -7,3 +7,7 @@ lib/
 *.log
 hooks/
 node_modules
+
+demo/hooks
+demo/platforms
+demo/node_modules

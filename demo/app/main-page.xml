@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    navigatingTo="navigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="HockeyApp SDK" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout class="p-20">
+        <Button text="Test Event Tracking" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
+    </StackLayout>
+</Page>

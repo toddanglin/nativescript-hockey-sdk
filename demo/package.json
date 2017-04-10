@@ -1,0 +1,22 @@
+{
+  "description": "NativeScript HockeySDK Demo",
+  "license": "MIT",
+  "readme": "NativeScript Application",
+  "repository": "https://github.com/toddanglin/nativescript-hockey-sdk",
+  "nativescript": {
+    "id": "com.htmlui.nativescript-hockeysdk-demo",
+    "tns-ios": {
+      "version": "2.5.4"
+    }
+  },
+  "dependencies": {
+    "nativescript-hockey-sdk": "..",
+    "nativescript-theme-core": "~1.0.2",
+    "tns-core-modules": "rc"
+  },
+  "devDependencies": {
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "~0.4.0",
+    "typescript": "~2.2.1"
+  }
+}
