@@ -36,7 +36,7 @@ Using the `Info.plist` syntax above with the `${APP_ID}` key, simply add this li
 APP_ID = YOUR-HOCKYSDK-APP-ID
 ```
 
-During builds, the value from `build.xcconfig` will replace the `{$APP_ID}` key in `Info.plist`.
+During builds, the value from `build.xcconfig` will replace the `${APP_ID}` key in `Info.plist`.
 
 ## Android
 
