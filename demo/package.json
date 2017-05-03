@@ -6,17 +6,17 @@
   "nativescript": {
     "id": "com.htmlui.nativescript-hockeysdk-demo",
     "tns-ios": {
-      "version": "2.5.4"
+      "version": "3.0.0"
     }
   },
   "dependencies": {
     "nativescript-hockey-sdk": "..",
-    "nativescript-theme-core": "~1.0.2",
-    "tns-core-modules": "rc"
+    "nativescript-theme-core": "~1.0.4",
+    "tns-core-modules": "3.0.0"
   },
   "devDependencies": {
     "nativescript-dev-android-snapshot": "^0.*.*",
-    "nativescript-dev-typescript": "~0.4.0",
+    "nativescript-dev-typescript": "^0.4.2",
     "typescript": "~2.2.1"
   }
 }

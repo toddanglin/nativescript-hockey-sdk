@@ -1,6 +1,6 @@
 {
   "name": "nativescript-hockey-sdk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Use the HockeyApp SDK in NativeScript projects",
   "main": "hockeyapp",
   "typings": "index.d.ts",
@@ -21,8 +21,8 @@
   },
   "nativescript": {
     "platforms": {
-      "ios": "2.5.0",
-      "android": "2.5.0"
+      "ios": "3.0.0",
+      "android": "3.0.0"
     }
   },
   "repository": {
@@ -53,13 +53,13 @@
   "homepage": "https://github.com/toddanglin/nativescript-hockey-sdk",
   "readmeFilename": "README.md",
   "peerDependencies": {
-    "tns-core-modules": "^2.5.1"
+    "tns-core-modules": "^3.0.0"
   },
   "devDependencies": {
     "nativescript-hook": "^0.2.1",
-    "nativescript-dev-typescript": "0.3.7",
-    "tns-core-modules": "^2.5.1",
-    "tns-platform-declarations": "^2.5.1",
+    "nativescript-dev-typescript": "0.4.2",
+    "tns-core-modules": "^3.0.0",
+    "tns-platform-declarations": "^3.0.0",
     "typescript": "2.2.1",
     "rimraf": "2.6.1"
   }
