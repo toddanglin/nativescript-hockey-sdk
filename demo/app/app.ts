@@ -1,5 +1,4 @@
-﻿import "./bundle-config";
-import * as app from 'application';
+﻿import * as app from 'application';
 import { HockeyApp } from 'nativescript-hockey-sdk';
 
 app.on(app.launchEvent, (args) => {

@@ -1,7 +1,6 @@
 /// <reference path="node_modules/tns-platform-declarations/ios/ios.d.ts" />
 
 import { isIOS } from 'platform';
-import { NativeScriptError } from 'application';
 import { IOS, getInstance } from "./hockeyapp.common";
 import * as utils from "utils/utils";
 
