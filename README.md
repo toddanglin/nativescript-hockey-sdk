@@ -27,6 +27,8 @@ Add the HockeyApp `APP_ID` to the `/app/App_Resources/iOS/Info.plist` file:
 
 The iOS version of this plugin uses the HockeyApp SDK CocoaPod. See the [HockeyApp SDK CocoaPod docs](https://cocoapods.org/pods/HockeySDK-Source) for additional configuration options.
 
+**NOTE:** As of version 1.2.0, this plugin requires XCode 8.3+. If you use an older version of XCode, you may see `invalid bitcode version` errors when trying to build NativeScript projects that include this plugin.
+
 ### Using build.xcconfig
 On iOS, you also have the option of putting your HockeySDK `APP_ID` in the `build.xcconfig` file rather than directly embedding in `Info.plst`. This can help if, for example, you want to avoid putting SDK keys in source control.
 
